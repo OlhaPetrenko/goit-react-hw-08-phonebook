@@ -1,0 +1,19 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 380px;
+}
+
+.input {
+  padding: 3px;
+  margin-top: 10px;
+}
+.input:focus,
+.input:hover {
+  border: 2px solid rgba(172, 23, 107, 0.932);
+  border-radius: 5px;
+  outline: transparent;
+}

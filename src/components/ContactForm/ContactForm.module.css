@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  border: 2px solid rgba(172, 23, 107, 0.932);
+  border-radius: 5px;
+  padding: 25px;
+  padding-bottom: 10px;
+  justify-content: space-around;
+}
+.label {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgba(172, 23, 107, 0.932);
+  background-color: rgba(217, 78, 157, 0.534);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.btn:hover,
+.btn:focus {
+  background-color: rgba(172, 23, 107, 0.932);
+  color: #fff;
+}
+
+.input {
+  padding: 5px;
+}
+.input:focus,
+.input:hover {
+  border: 2px solid rgba(172, 23, 107, 0.932);
+  border-radius: 5px;
+  outline: transparent;
+}

@@ -1,13 +1,18 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import s from './ContactForm.module.css';
 
 class ContactForm extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
   };
   handleChange = event => {
-    // console.log('event.currentTarget.value', event.currentTarget.value);
-    // console.log('event.currentTarget.name', event.currentTarget.name);
     this.setState({
       [event.currentTarget.name]: event.currentTarget.value,
     });
@@ -15,17 +20,18 @@ class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // console.log('this.state', this.state);
+
     this.props.onSubmit(this.state.name, this.state.number);
     this.setState({ name: '', number: '' });
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <form className={s.form} onSubmit={this.handleSubmit}>
+        <label className={s.label}>
           Name
           <input
+            className={s.input}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -35,9 +41,10 @@ class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <label>
+        <label className={s.label}>
           Number
           <input
+            className={s.input}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -47,7 +54,9 @@ class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={s.btn}>
+          Add contact
+        </button>
       </form>
     );
   }
