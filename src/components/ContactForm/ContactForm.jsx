@@ -19,9 +19,10 @@ class ContactForm extends Component {
   };
 
   handleSubmit = event => {
+    const { name, number } = this.state;
     event.preventDefault();
 
-    this.props.onSubmit(this.state.name, this.state.number);
+    this.props.onSubmit(name, number);
     this.setState({ name: '', number: '' });
   };
 
