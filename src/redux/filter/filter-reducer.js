@@ -1,16 +1,12 @@
-import { SET_FILTER } from './filter-types';
+// import { SET_FILTER } from './filter-types';
+import { createReducer } from '@reduxjs/toolkit';
+import { setFiter } from './filter-actions';
 
 const initialStore = '';
-function filterReducer(store = initialStore, action) {
-  const { type, payload } = action;
 
-  switch (type) {
-    case SET_FILTER:
-      return payload;
-
-    default:
-      return store;
-  }
-}
+const filterReducer = createReducer(initialStore, {
+  // [setFiter]: (store, { payload }) => payload,
+  [setFiter]: (_, { payload }) => payload,
+});
 
 export default filterReducer;

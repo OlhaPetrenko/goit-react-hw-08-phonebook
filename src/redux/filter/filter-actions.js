@@ -1,8 +1,3 @@
-import { SET_FILTER } from './filter-types';
+import { createAction } from '@reduxjs/toolkit';
 
-export function setFiter(payload) {
-  return {
-    type: SET_FILTER,
-    payload,
-  };
-}
+export const setFiter = createAction('contactsFilter/set');
