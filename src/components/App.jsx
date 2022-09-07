@@ -5,14 +5,22 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 
-import { addContactsItem, deleteContactsItem } from 'redux/items/items-actions';
-import { setFiter } from 'redux/filter/filter-actions';
+// import { addContactsItem, deleteContactsItem } from 'redux/items/items-actions';
+// import { setFilter } from 'redux/filter/filter-actions';
+// =========================================
+import { filterSlise } from 'redux/filter/filter-reducer';
+import { itemsSlice } from 'redux/items/items-reducer';
+// ============================================================
+
 import { getContactsItems } from 'redux/items/items-selectors';
 import { getContactsFilter } from 'redux/filter/filter-selectors';
 
 import s from './App.module.css';
 
 function App() {
+  const { setFilter } = filterSlise.actions;
+  const { addContactsItem, deleteContactsItem } = itemsSlice.actions;
+
   const contactsItems = useSelector(getContactsItems);
   const contactsFilter = useSelector(getContactsFilter);
   const dispatch = useDispatch();
@@ -49,7 +57,7 @@ function App() {
       <Section title="Contacts">
         <Filter
           value={contactsFilter}
-          onChange={event => dispatch(setFiter(event.currentTarget.value))}
+          onChange={event => dispatch(setFilter(event.currentTarget.value))}
         />
         <ContactList
           contacts={filterContacts}
