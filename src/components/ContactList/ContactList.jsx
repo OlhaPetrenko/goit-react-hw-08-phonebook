@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import s from './ContactList.module.css';
 
 function ContactList({ contacts, onDeleteContact }) {
-  const contactItem = contacts.map(({ name, number, id }) => (
+  const contactItem = contacts.map(({ name, phone, id }) => (
     <ContactListItem
       key={id}
       id={id}
       name={name}
-      number={number}
+      number={phone}
       onDeleteContact={onDeleteContact}
     />
   ));
