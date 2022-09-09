@@ -1,16 +1,6 @@
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
 import actions from './items-actions';
 
-// import { createSlice } from '@reduxjs/toolkit';
-// import { nanoid } from 'nanoid';
-
-// const initialStore = [
-//   // { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-//   // { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-//   // { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-//   // { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-// ];
-
 const itemsItemsReducer = createReducer([], {
   [actions.fetchContactsSuccess]: (_, { payload }) => payload,
   [actions.addContactSuccess]: (store, { payload }) => [...store, payload],
@@ -45,7 +35,7 @@ const itemsReducer = combineReducers({
   error: errorReducer,
 });
 
-//================================
+//================================ той самий itemsReducer у іношому вигляді
 
 // const initialStore = {
 //   items: [],
@@ -93,30 +83,4 @@ const itemsReducer = combineReducers({
 //     store.loading = false;
 //   },
 
-//   // [actions.addContactsItem]: (store, { payload }) => {
-//   //   store.items = [...store.items, payload];
-//   // },
-//   // [actions.deleteContactsItem]: (store, { payload }) =>
-//   //   store.items.filter(item => item.id !== payload),
-// });
-
 export default itemsReducer;
-
-// ================================== createSlice
-
-// export const itemsSlice = createSlice({
-//   name: 'items',
-//   initialState: initialStore,
-//   reducers: {
-//     addContactsItem: {
-//       reducer: (store, { payload }) => [...store, payload],
-//       prepare: (name, number) => {
-//         return {
-//           payload: { name, number, id: nanoid() },
-//         };
-//       },
-//     },
-//     deleteContactsItem: (store, { payload }) =>
-//       store.filter(item => item.id !== payload),
-//   },
-// });

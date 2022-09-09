@@ -6,37 +6,30 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 
-// import { addContactsItem, deleteContactsItem } from 'redux/items/items-actions';
-import { setFilter } from 'redux/filter/filter-actions';
+import { filterSlice } from 'redux/filter/filter-slice';
 
 import {
   fetchContacts,
   addContactItem,
   deleteContactItem,
-} from '../redux/items/items-operations';
-// =========================================
-// import { filterSlise } from 'redux/filter/filter-reducer';
-// import { itemsSlice } from 'redux/items/items-reducer';
-// ============================================================
+} from 'redux/items/items-operations';
 
 import {
   getContactsItems,
   getLoading,
   getError,
 } from 'redux/items/items-selectors';
-// import { getContactsFilter } from 'redux/filter/filter-selectors';
+import { getContactsFilter } from 'redux/filter/filter-selectors';
 
 import s from './App.module.css';
 
 function App() {
-  // const { setFilter } = filterSlise.actions;
-  // const { addContactsItem, deleteContactsItem } = itemsSlice.actions;
+  const { setFilter } = filterSlice.actions;
 
   const contactsItems = useSelector(getContactsItems);
   const loading = useSelector(getLoading);
   const error = useSelector(getError);
-  // const contactsFilter = useSelector(getContactsFilter);
-  const contactsFilter = useSelector(store => store.contacts.filter);
+  const contactsFilter = useSelector(getContactsFilter);
 
   const dispatch = useDispatch();
 
@@ -44,21 +37,20 @@ function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  function onAddContactsItem(name, number) {
+  function onAddContactsItem(data) {
     const nameArr = contactsItems.map(contact => contact.name.toLowerCase());
     const numberArr = contactsItems.map(contact => contact.phone);
-    console.log('numberArr', numberArr); /// delete at the end
 
-    if (nameArr.includes(name.toLowerCase())) {
-      alert(`${name} is already in contacts`);
+    if (nameArr.includes(data.name.toLowerCase())) {
+      alert(`${data.name} is already in contacts`);
       return;
     }
-    // if (numberArr.includes(number)) {
-    //   alert(`${number} is already in contacts`);
-    //   return;
-    // } = проверка на номер - вконце оставить
+    if (numberArr.includes(data.number)) {
+      alert(`${data.number} is already in contacts`);
+      return;
+    }
 
-    dispatch(addContactItem(name, number));
+    dispatch(addContactItem(data));
   }
 
   function onDeleteContactItem(contactId) {

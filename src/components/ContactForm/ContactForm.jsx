@@ -23,8 +23,9 @@ function ContactForm({ onSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const data = { name, number };
+    onSubmit(data);
 
-    onSubmit(name, number);
     setName('');
     setNumber('');
   }
