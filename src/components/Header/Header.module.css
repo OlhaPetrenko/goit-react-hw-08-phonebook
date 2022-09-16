@@ -1,0 +1,83 @@
+.Header {
+  border-bottom: 2px solid rgba(119, 136, 153, 0.658);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(137, 93, 118, 0.466),
+    rgba(163, 42, 111, 0.932),
+    10px,
+    rgba(217, 78, 157, 0.329) 10px,
+    rgba(217, 78, 157, 0.534) 20px
+  );
+}
+
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 30px 15px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Link {
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  /* min-width: 150px; */
+
+  padding: 7px 20px;
+  color: rgba(118, 8, 221, 0.469);
+  border-radius: 5px;
+  border: 2px solid blueviolet;
+  background-color: rgb(199, 236, 224);
+}
+.Link:not(:last-child) {
+  margin-right: 10px;
+}
+
+.Active {
+  color: rgb(118, 8, 221);
+  box-shadow: 5px 1px 2px rgb(0 0 0 / 12%), 5px 5px 1px rgb(0 0 0 / 14%),
+    5px 5px 3px rgb(0 0 0 / 20%);
+  background-color: aquamarine;
+}
+
+.Link:hover,
+.Link:focus {
+  color: rgb(118, 8, 221);
+  box-shadow: 5px 1px 2px rgb(0 0 0 / 12%), 5px 5px 1px rgb(0 0 0 / 14%),
+    5px 5px 3px rgb(0 0 0 / 20%);
+  background-color: white;
+}
+
+.UserMenu {
+  display: flex;
+  gap: 10px;
+}
+
+.Name {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(199, 236, 224);
+}
+
+.btn {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 7px 20px;
+
+  border-radius: 5px;
+  border: 2px solid blueviolet;
+  background-color: rgb(199, 236, 224);
+}
+.btn:hover,
+.btn:focus {
+  color: rgb(118, 8, 221);
+  box-shadow: 5px 1px 2px rgb(0 0 0 / 12%), 5px 5px 1px rgb(0 0 0 / 14%),
+    5px 5px 3px rgb(0 0 0 / 20%);
+  background-color: aquamarine;
+}

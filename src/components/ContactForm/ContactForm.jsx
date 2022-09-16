@@ -33,7 +33,7 @@ function ContactForm({ onSubmit }) {
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <label className={s.label}>
-        Name
+        Ім'я
         <input
           className={s.input}
           type="text"
@@ -42,11 +42,12 @@ function ContactForm({ onSubmit }) {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={name}
+          placeholder="Введіть ім'я контакту"
           onChange={handleChange}
         />
       </label>
       <label className={s.label}>
-        Number
+        Номер
         <input
           className={s.input}
           type="tel"
@@ -55,11 +56,12 @@ function ContactForm({ onSubmit }) {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={number}
+          placeholder="Введіть номер контакту"
           onChange={handleChange}
         />
       </label>
       <button type="submit" className={s.btn}>
-        Add contact
+        Додати контакт
       </button>
     </form>
   );

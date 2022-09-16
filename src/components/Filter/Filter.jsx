@@ -4,7 +4,7 @@ import s from './Filter.module.css';
 function Filter({ value, onChange }) {
   return (
     <label className={s.label}>
-      Find contact by Name
+      Знайти контакт за ім'ям
       <input
         className={s.input}
         type="text"

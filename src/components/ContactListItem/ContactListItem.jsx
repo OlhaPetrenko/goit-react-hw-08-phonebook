@@ -12,7 +12,7 @@ function ContactListItem({ name, number, id, onDeleteContact }) {
         type="button"
         onClick={() => onDeleteContact(id)}
       >
-        Delete
+        Видалити
       </button>
     </li>
   );
