@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/680.d35f2a0a.chunk.css","mappings":"AAAA,wBAEE,mBAAoB,CADpB,gBAEF,CACA,sBACE,kBAAmB,CACnB,iBACF","sources":["components/Section/Section.module.css"],"sourcesContent":[".Section {\n  padding-top: 30px;\n  padding-bottom: 30px;\n}\n.title {\n  margin-bottom: 20px;\n  text-align: center;\n}\n"],"names":[],"sourceRoot":""}
